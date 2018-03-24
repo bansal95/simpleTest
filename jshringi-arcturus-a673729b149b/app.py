@@ -77,6 +77,7 @@ def action ():
 
 @application.route("/get_server_status",methods=['POST','GET'])
 def get_server_status():
+	return 'hello'
 	return json_response(success=True)
 
 
@@ -189,10 +190,12 @@ def dialogue_webhook():
 	payload['elements']=elements
 	attachment['payload']=payload
 	facebook['attachment']=attachment
+	data = {}
+	data['facebook'] = facebook
 	#print(facebook)
 
 	#pdb.set_trace()
-	return json_response(data=facebook,success=True)
+	return json_response(facebook=data,success=True)
 
 
 
